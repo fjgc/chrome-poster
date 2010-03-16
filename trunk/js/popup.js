@@ -63,7 +63,8 @@ function doRequest(method)
 	var header = xhr.getAllResponseHeaders();
 	var all = header.split("\r\n");
 	for (var i = 0; i < all.length; i++) {
-	    result += ("<li>" + all[i] + "</li>");
+	    if (all[i] != "")
+		result += ("<li>" + all[i] + "</li>");
 	}
 	result += xhr.responseText;
 
