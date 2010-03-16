@@ -3,6 +3,7 @@ function init()
     var req = chrome.extension.getBackgroundPage().Request.request;
     req.nameE = document.getElementById("header_name");
     req.valueE = document.getElementById("header_value");
+    document.getElementById("url").value = req.url;
     var list = document.getElementById("header_list");
     list.innerHTML = renderHeaders()
 }
@@ -59,16 +60,16 @@ function doRequest(method)
     }
 
     xhr.onload = function() {
-	var result = "status: " + xhr.status + "<br />";
+	var result = "status: " + xhr.status + " " + xhr.statusText + "<br />";
 	var header = xhr.getAllResponseHeaders();
 	var all = header.split("\r\n");
 	for (var i = 0; i < all.length; i++) {
 	    if (all[i] != "")
 		result += ("<li>" + all[i] + "</li>");
 	}
-	result += xhr.responseText;
 
-	document.getElementById("response").innerHTML = result;
+	document.getElementById("response_header").innerHTML = result;
+	document.getElementById("response_body").innerText = xhr.responseText;
     }
     xhr.send(req.body);
 }
