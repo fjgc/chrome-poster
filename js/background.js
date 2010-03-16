@@ -2,7 +2,7 @@ function Request() {
     this.headers = {};
     this.body = null;
     this.method = "GET";
-    this.url = "";
+    this.url = "http://";
 
     this.xhr = null;
     this.nameE = null;

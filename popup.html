@@ -6,7 +6,7 @@
   </head>
   <body>
     <div id="urlbox">
-      URL: <input type="text" size="60" id="url" value="http://72.14.203.160"/>
+      URL: <input type="text" size="70" id="url" value="http://"/>
     </div>
     <br />
     <div id="header">
@@ -30,9 +30,12 @@
       <input type="button" value="PUT" onclick="doRequest('PUT');"/>
     </div>
     <br />
-    <div id="response">
+    Response:
+    <div id="response_header">
     </div>
-
+    <br />
+    <div id="response_body">
+    </div>
     <script>
       init();
     </script>
