@@ -11,10 +11,10 @@ function init()
 function renderHeaders()
 {
     var req = chrome.extension.getBackgroundPage().Request.request;
-    var html = "<table>";
+    var html = "<table border=1>";
     html += "<tr><th>name</th><th>value</th></tr>";
     for (var i in req.headers) {
-	html += "<tr><td>" + i + "</td><td>" + req.headers[i] + "</td></tr>";
+	html += "<tr><td align=\"left\">" + i + "</td><td align=\"right\">" + req.headers[i] + "</td></tr>";
     }
     html += "</table>"
     return html;
