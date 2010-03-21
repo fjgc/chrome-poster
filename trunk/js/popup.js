@@ -8,6 +8,12 @@ function init()
     list.innerHTML = renderHeaders()
 }
 
+function onUrlChanged()
+{
+    var req = chrome.extension.getBackgroundPage().Request.request;
+    req.url = document.getElementById("url").value;;
+}
+
 function renderHeaders()
 {
     var req = chrome.extension.getBackgroundPage().Request.request;
