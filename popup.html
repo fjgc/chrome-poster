@@ -15,6 +15,8 @@
       Value: <input type="text" size="15" id="header_value" value=""/>
       <input type="button" value="Add/Change" onclick="onAddChangeHeader();"/>
       <br />
+      value '##' to delete
+      <br />
       <br />
       <div id="header_list">
       </div>
@@ -22,7 +24,7 @@
     <br />
     <div id="body">
       Content Body:
-      <textarea id="content_body" rows="3" cols="60"></textarea>
+      <textarea id="content_body" rows="3" cols="60" onkeyup="onBodyChanged();" onblur="onBodyChanged();"></textarea>
     </div>
     <br />
     <div id="actions">
