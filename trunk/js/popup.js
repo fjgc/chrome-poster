@@ -3,10 +3,19 @@ function init()
     var req = chrome.extension.getBackgroundPage().Request.request;
     req.nameE = document.getElementById("header_name");
     req.valueE = document.getElementById("header_value");
+    req.nameE.value = req.hname;
+    req.valueE.value = req.hvalue;
     document.getElementById("url").value = req.url;
     document.getElementById("content_body").value = req.body;
     var list = document.getElementById("header_list");
     list.innerHTML = renderHeaders()
+}
+
+function onHeaderChanged()
+{
+    var req = chrome.extension.getBackgroundPage().Request.request;
+    req.hname = req.nameE.value;
+    req.hvalue = req.valueE.value;
 }
 
 function onUrlChanged()
@@ -41,6 +50,7 @@ function onAddChangeHeader()
 	req.headers[name] = value;
     }
     req.nameE.value = req.valueE.value = "";
+    onHeaderChanged();
     var list = document.getElementById("header_list");
     list.innerHTML = renderHeaders()
 }
