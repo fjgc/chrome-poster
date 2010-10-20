@@ -5,8 +5,10 @@ function Request() {
     this.url = "http://";
 
     this.xhr = null;
-    this.nameE = null;
+    this.nameE = null;		// element
     this.valueE = null;
+    this.hname = "";		// header name
+    this.hvalue = "";		// header value
 }
 
 Request.request = new Request();

@@ -11,8 +11,8 @@
     <br />
     <div id="header">
       Headers: <br />
-      Name: <input type="text" size="15" id="header_name" value=""/>
-      Value: <input type="text" size="15" id="header_value" value=""/>
+      Name: <input type="text" size="15" id="header_name" value="" onkeyup="onHeaderChanged();" onblur="onHeaderChanged();"/>
+      Value: <input type="text" size="15" id="header_value" value="" onkeyup="onHeaderChanged();" onblur="onHeaderChanged();"/>
       <input type="button" value="Add/Change" onclick="onAddChangeHeader();"/>
       <br />
       value '##' to delete

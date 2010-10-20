@@ -1,6 +1,6 @@
 {
   "name": "Chrome Poster",
-  "version": "1.3",
+  "version": "1.4",
   "description": "Chrome poster is a developer tool that allows you to interact with http server",
   "background_page": "background.html",
   "browser_action": {
